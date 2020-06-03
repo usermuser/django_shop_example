@@ -1,0 +1,13 @@
+{% block content %}
+
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        {{ product_form.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="создать продукт">
+    </form>
+
+    <a href="{% url 'admin:products' category.pk %}">back</a>
+
+
+{% endblock %}

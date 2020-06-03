@@ -1,0 +1,8 @@
+
+# TODO
+1. change urls to re_path from path
+2. add oauth2 via vk
+3. finish with products actions in custom admin interface
+4. change design of main page
+5. make custom admin pretty (use twitter bootstrap)
+6.

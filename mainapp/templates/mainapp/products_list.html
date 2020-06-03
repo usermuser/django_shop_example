@@ -1,0 +1,77 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+    {% block title %} {{ title|title }} {% endblock  %}
+
+    {% block content %}
+
+      <div class="slider">
+
+			{% include 'mainapp/includes/header_clearfix.html' %}
+
+			<div class="text-slider">
+				<h3 class="green">тенденции</h3>
+				<h3 class="big"> удобные стулья</h3>
+				<p>Новый уровень комфорта. Отличные характеристики.</p>
+				<a href="#" class="button-order">заказать <img src="{% static 'img/arrow.png' %}" alt=""></a>
+			</div>
+
+			<div class="navi">
+				<a href="#"></a><a href="#"></a><a href="#"></a>
+			</div>
+		</div>
+
+      <div class="details">
+            <div class="links clearfix">
+              {% include 'mainapp/includes/inc_categories_menu.html' %}
+            </div>
+
+            <div class="products_list">
+                    {% if category %}
+                          <div class="title clearfix">
+                            <h2>
+                              Категория: "{{ category.name|title }}"
+                            </h2>
+                          </div>
+                    {% endif %}
+
+                      <div class="category-products clearfix">
+
+                              {% for product in products %}
+                                    <div class="block">
+                                        <div class="text">
+    {#                                      <img src="{% static 'img/icon-hover.png' %}" alt="hover">#}
+                                          <h4>{{ product.name }}</h4>
+                                          <p>{{ product.description }} </p>
+                                        </div>
+                                        <a href="{% url 'mainapp:product' product.pk %}">подробнее</a>
+                                        <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                                    </div>
+                              {% endfor %}
+                      </div>
+
+            </div>
+
+            {% if hot_product %}
+                <br><br>
+                <h1>Hot products below</h1>
+                <h3>{{ hot_product.name }}</h3>
+                <h3>{{ hot_product.price }} <span>руб</span></h3>
+                <h4>
+{#                    <a href="{% url 'basket:add' %}"></a>#}
+                    <a href="{% url 'mainapp:product' hot_product.pk %}">
+                        подробнее
+                    </a>
+
+    {#                <a href="{% url 'basket:add' hot_product.pk %}"></a>#}
+                </h4>
+                <p>{{ hot_product.description }}</p>
+            {% endif %}
+      </div>
+
+      <div class="clr"></div>
+
+    {% endblock %}
+
+
+

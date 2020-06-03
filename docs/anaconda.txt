@@ -1,0 +1,36 @@
+https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04
+
+conda create --name my_env python=3
+conda create --name py372 python=3.7.2
+conda create -n my_env35 python=3.5
+
+source activate my_env
+source acitvate py372
+conda activate py372
+conda activate conda_env_gb_dj
+
+conda deactivate
+source deactivate
+
+python --version
+
+
+Note that you can replace the word source with . to achieve the same results.
+You can update your version of Python along the same branch 
+(as in updating Python 3.5.1 to Python 3.5.2) within a respective 
+environment with the following command:
+conda update python
+
+conda info --envs
+
+
+
+You can add additional packages, such as numpy for example, with the following command:
+
+conda install --name my_env35 numpy
+If you know you would like a numpy environment upon creation, you can target it in your conda create command:
+
+conda create --name my_env python=3 numpy
+If you are no longer working on a specific project and have no further need for the associated environment, you can remove it. To do so, type the following:
+
+conda remove --name my_env35 --all

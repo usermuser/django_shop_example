@@ -1,0 +1,14 @@
+{% block content %}
+
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        {{ prod_cat_form.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="создать категорию">
+    </form>
+
+    <button>
+        <a href="{% url 'adminapp:categories' %}">back to categories list</a>
+    </button>
+
+{% endblock %}
