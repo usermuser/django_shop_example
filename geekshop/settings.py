@@ -131,13 +131,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-# print('stat=',STATICFILES_DIRS)
 
 MEDIA_URL = '/media/'
 PROJ_DIR = os.path.dirname(BASE_DIR)
 MEDIA_ROOT = os.path.join(PROJ_DIR, 'media')
-# print('media root: ',MEDIA_ROOT)
-# print('media url: ', MEDIA_URL)
 
 AUTH_USER_MODEL = 'authapp.ShopUser'
 
